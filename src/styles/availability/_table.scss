@@ -1,0 +1,315 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #F1F1F1;
+}
+
+.table_time_wrapper {
+  background-color: #F1F1F1;
+  .timetable_header {
+    width: 100%;
+    padding: 15px 0;
+    text-align: center;
+    h1 {
+      display: inline-block;
+      margin: 0 auto;
+      color: darken($gray, 24%);
+      font-weight: 300;
+      transform: translateX(80px);
+    }
+    .btn_delete_all {
+      float: right;
+      padding: 0 44px;
+      display: inline-block;
+      font-family: Roboto, sans-serif;
+      text-decoration: none;
+      outline: none;
+      height: 37px;
+      line-height: 37px;
+      transition: background 0.4s ease;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      user-select: none;
+      border: none;
+      color: $white;
+      border-radius: 4px;
+      background:  $light-red;
+      text-transform: none;
+      font-weight: 500;
+      font-size: 15px;
+      cursor: pointer;
+      &:hover {
+        background-color: lighten($light-red, 7%);
+      }
+      &.disabled {
+        background: lighten($gray, 22%);
+        cursor: no-drop;
+        &:hover {
+          background: lighten($gray, 22%);
+        }
+      }
+    }
+  }
+  .timetable_header-sub {
+    h4 {
+      padding: 15px 0;
+      color: darken($gray, 33%);
+      font-weight: 300;
+      text-align: center;
+      margin: 0;
+    }
+  }
+}
+
+.time_table_body {
+  display: flex;
+  align-items: flex-end;
+  font-family: Roboto, sans-serif;
+  text-align: center;
+}
+
+.TableWidget {
+  margin: 0 auto;
+  padding: 10px 15px;
+  width: 1000px;
+  .week_days_block {
+    width: 15%;
+    cursor: default;
+    color: darken($gray, 44%);
+    font-size: 1.2rem;
+    text-align: left;
+    font-weight: 300;
+    .row  {
+      height: 44px;
+      display: flex;
+      width: 100%;
+      align-items: center;
+      .vertical_align {
+        display: inline-block;
+        width: 100%;
+      }
+    }
+  }
+  .table-flex {
+    width: 85%;
+    text-align: center;
+    color: $gray;
+    .mobile_week_day {
+      display: none;
+    }
+    .row {
+      width: 100%;
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      height: 44px;
+      align-items: center;
+      &.availability_header {
+        padding-bottom: 20px;
+      }
+      .schedule {
+        margin-top: -10px;
+        line-height: 20px;
+        height: 20px;
+        font-size: 13px;
+        top: 50%;
+        z-index: 1;
+        overflow: hidden;
+        position: absolute;
+        background: $green;
+        cursor: pointer;
+        color: $white;
+        border-radius: 10px;
+        transition: all 0.7s ease;
+        &.example-leave {
+          opacity: 1;
+          background-color: $light-red;
+        }
+        &.example-enter {
+          opacity: 0;
+        }
+        &.example-enter.example-enter-active {
+          opacity: 1;
+        }
+        &.example-leave.example-leave-active {
+          opacity: 0;
+        }
+        &:hover {
+          background: lighten($green, 7%);
+        }
+      }
+      .cell {
+        width: calc(100% / 25);
+        height: 20px;
+        transition: all 0.7s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .circle {
+          transition: transform 0.4s ease;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background-color: $gray;
+        }
+        &.hovered {
+          color: darken($gray, 44%);
+          text-shadow: 0 1px 0 rgba(255, 255, 255, 0.9);
+        }
+        &:first-child {
+          &:hover {
+            cursor: default;
+          }
+        }
+        &:hover {
+          cursor: pointer;
+          .circle {
+            transform: scale(2);
+          }
+        }
+      }
+      &.availability_header {
+        .cell {
+          display: block;
+          cursor: default;
+        }
+        .header_scale {
+          font-weight: 300;
+          font-size: .75rem;
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+
+
+@media (max-width: $sm-min) {
+  .TableWidget {
+    width: 100%;
+  }
+}
+
+@media (max-width: $xs-min) {
+  .TableWidget {
+    margin: 0 auto;
+    padding: 10px 15px;
+    width: 100%;
+    max-width: $sm-min - 10px;
+    .week_days_block {
+      display: none;
+    }
+    .time_table_body {
+      width: 100%;
+    }
+    .table-flex {
+      width: 100%;
+      .mobile_week_day {
+        display: block;
+        position: relative;
+        width: 100%;
+        &:before {
+          width: 100%;
+          top: 50%;
+          left: 0;
+          content: '';
+          display: block;
+          position: absolute;
+          border: 1px solid darken($gray, 24%);
+        }
+        .line {
+          padding: 0 4px;
+          position: relative;
+          color: darken($gray, 24%);
+          display: inline-block;
+          background-color: #F1F1F1;
+        }
+      }
+      .row {
+        height: 36px;
+        .schedule {
+          padding: 0 4px;
+        }
+        &.header {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+  .table_time_wrapper {
+    .timetable_header-sub h4 {
+      padding: 0 0 6px 0;
+    }
+    .timetable_header{
+      padding: 0;
+      .btn_delete_all {
+        padding: 0 20px;
+        display: block;
+        float: none;
+        margin: 0 auto 15px auto;
+      }
+      h1 {
+        display: block;
+        transform: none;
+        font-size: 2em;
+        padding-bottom: 15px;
+      }
+      .button_out_of_call {
+        float: none;
+        display: block;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+@media (max-width: $xs-min) {
+  .table_time_wrapper {
+    .timetable_header{
+      h1 {
+        font-size: 1.4em;
+      }
+    }
+    .table-flex {
+      width: 100%;
+      .row {
+        height: 36px;
+        &.header {
+          margin-bottom: 10px;
+        }
+        .cell {
+          width: calc(100% / 12);
+          &:first-child {
+            display: none;
+          }
+          &:nth-child(even) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  .form {
+    .formHeader {
+      font-size: 1.4em;
+      padding-bottom: 30px;
+    }
+  }
+  .InputRange-slider {
+    margin-top: -1.1rem;
+    width: 2rem;
+    height: 2rem;
+  }
+  .InputRange-track {
+    height: 0.4rem;
+  }
+  .popup .popup__container .popup_buttons_container {
+    padding-top: 2em;
+  }
+  .popup .popup__container .are_you_sure {
+    padding: 0 10px;
+  }
+}

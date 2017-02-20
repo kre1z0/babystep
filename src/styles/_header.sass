@@ -1,0 +1,274 @@
+.header
+  background: $blue
+
+  &.header-guest
+    background: #fff
+    color: $black-text
+    box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.05)
+    position: relative
+    z-index: 10
+
+    .logo
+      margin-right: 20px
+
+    nav
+      li
+
+      a
+        padding: 10px 15px
+        color: $black-text
+        &:hover
+          border: 1px solid transparent
+
+    .header-right-menu
+      width: auto
+      ul
+        margin-right: 20px
+      a
+        color: $black-text
+        border-color: $header-guest-border
+
+.header-container
+  display: flex
+  justify-content: space-between
+  align-items: center
+  padding-top: 20px
+  padding-bottom: 20px
+  max-height: 90px
+  padding-left: 15px
+  padding-right: 15px
+  max-width: 1130px
+  width: 100%
+  margin: 0 auto
+
+  nav
+    text-align: center
+    ul
+      display: flex
+      justify-content: space-between
+      width: 465px
+    li
+      display: inline-block
+      a
+        padding: 10px 15px
+        color: #fff
+        font-size: 15px
+        border: 1px solid transparent
+        border-radius: 3px
+        transition: border .3s ease
+
+        i
+          margin-left: 5px
+
+        &:hover
+          border: 1px solid #6079a7
+
+    li
+      a.active
+        border: 1px solid #6079a7
+
+    li:first-of-type
+      margin-left: 0
+
+    li:last-of-type
+      margin-right: 0
+
+.header-left-menu
+  display: flex
+  justify-content: space-around
+  align-items: center
+  margin-right: -75px
+
+  // .header-guest &
+    // margin-right: 140px
+
+  .logo
+    // margin-right: -60px
+
+  nav
+    ul
+      max-width: 400px
+      width: 100%
+
+.header-right-menu
+  display: flex
+  width: 110px
+  justify-content: space-between
+  align-items: center
+  max-height: 35px
+
+  i
+    color: #fff
+
+.notifications
+  font-size: 19px
+
+  &:hover
+    cursor: pointer
+
+.account-link
+  display: block
+  position: relative
+  display: flex
+  justify-content: space-between
+  align-items: center
+  width: 55px
+
+  &.active
+    .account-popup
+      // display: block
+      opacity: 1
+      visibility: visible
+      top: 55px
+
+  &:hover
+    cursor: pointer
+
+  img
+    border-radius: 50%
+    margin-right: 13px
+
+  .fa-caret-down
+    transition: transform .3s ease
+    font-size: 14px
+
+  &.active
+    .fa-caret-down
+      transform: rotate(-180deg)
+
+.account-popup
+  opacity: 0
+  visibility: hidden
+  position: absolute
+  top: 75px
+  right: 0
+  z-index: 10
+  width: 195px
+  min-height: 140px
+  height: auto
+  padding-left: 25px
+  padding-right: 20px
+  padding-top: 20px
+  padding-bottom: 20px
+  border-radius: 3px
+  box-shadow: $popup-shadow
+  background: #fff
+  transition: all .3s ease
+
+  &-username
+    color: $grey-text
+    margin-bottom: 35px
+    font-size: 13px
+
+  &-list
+    a
+      display: block
+      color: $black-text
+      margin-bottom: 10px
+      font-size: 13.5px
+
+.account-popup:before
+  content: ''
+  position: absolute
+  top: -11px
+  right: 30px
+  width: 0
+  height: 0
+  border-style: solid
+  border-width: 0 7.5px 11px 7.5px
+  border-color: transparent transparent #ffffff transparent
+
+.notifications
+  position: relative
+  &.active
+    .notifications-popup
+      opacity: 1
+      visibility: visible
+      top: 51px
+
+.notifications-popup
+  opacity: 0
+  visibility: hidden
+  position: absolute
+  top: 75px
+  right: -25px
+  z-index: 10
+  min-width: 250px
+  min-height: 190px
+  height: auto
+  font-size: 14px
+  border-radius: 3px
+  box-shadow: $popup-shadow
+  background: #fff
+  transition: all .3s ease
+
+  &-none
+    min-height: 150px
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+
+  &-icon
+    width: 50px
+    height: 50px
+    margin-bottom: 15px
+    border-radius: 50%
+    background: #f1f4f8
+
+  &-caption
+    color: $popup-text
+    font-size: 13px
+    padding-left: 50px
+    padding-right: 50px
+    text-align: center
+
+  &-more
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%
+    text-align: center
+    border-top: 1px solid #f1f4f8
+    height: 40px
+    line-height: 40px
+    font-size: 13.5px
+    background: $popup-more-bg
+
+.notifications-popup:before
+  content: ''
+  position: absolute
+  top: -11px
+  right: 27px
+  width: 0
+  height: 0
+  border-style: solid
+  border-width: 0 7.5px 11px 7.5px
+  border-color: transparent transparent #ffffff transparent
+
+.set-aside
+  position: relative
+
+  &.active
+    .set-aside-popup
+      opacity: 1
+      visibility: visible
+
+.set-aside-popup
+  opacity: 0
+  visibility: hidden
+  position: absolute
+  top: 75px
+  right: 0
+  z-index: 10
+  width: 195px
+  min-height: 140px
+  height: auto
+  padding-left: 25px
+  padding-right: 20px
+  padding-top: 20px
+  padding-bottom: 20px
+  border-radius: 3px
+  box-shadow: $popup-shadow
+  background: #fff
+  transition: all .3s ease

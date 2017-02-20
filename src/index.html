@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang='en' >
+<head >
+    <meta charset="utf-8">
+    <title>Babystep</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600&amp;subset=cyrillic" rel="stylesheet">
+    <script src="//connect.facebook.net/en_US/sdk.js"></script>
+    <script src="https://sdk.accountkit.com/en_US/sdk.js"></script>
+    <!--<script src="https://media.twiliocdn.com/sdk/js/common/v0.1/twilio-common.min.js"></script>-->
+    <!--<script src="https://media.twiliocdn.com/sdk/js/conversations/v0.13/twilio-conversations.min.js"></script>-->
+    <!--<script src="https://js.pusher.com/3.2/pusher.min.js"></script>-->
+    <script>
+      // ➡ facebook app id
+      var FACEBOOK_APP_ID = 636850923147673
+      // ➡ Facebook SDK
+      // ➡ https://developers.facebook.com/apps/636850923147673/fb-login/
+      window.fbAsyncInit = function() {
+        window.FB.init({
+          appId: FACEBOOK_APP_ID,
+          version: 'v2.7',
+          status: true,
+          cookie: true,
+          oauth: true,
+          xfbml: true,
+        })
+      }
+      // ➡ Account Kit SDK
+      // ➡ https://developers.facebook.com/apps/636850923147673/account-kit/
+      AccountKit_OnInteractive = function(){
+        window.AccountKit.init({
+          appId: FACEBOOK_APP_ID,
+          state: Math.random().toString(36).substring(10),
+          version: 'v1.1',
+        })
+      }
+    </script>
+</head >
+<body >
+
+<div id='react-root' style='height: 100%' ></div >
+
+</body >
+</html >

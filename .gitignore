@@ -1,0 +1,5 @@
+*.log
+documentation
+node_modules
+.idea/
+src/views/auth/login.js

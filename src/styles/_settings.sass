@@ -1,0 +1,242 @@
+$form-left-margin: 144px
+$label-width: 127px
+
+.settings
+  padding-top: 50px
+
+  &-header
+    margin-top: 0
+    padding-left: $form-left-margin
+    margin-bottom: 24px
+    font-weight: 300
+    font-size: 30px
+    padding-left: 0
+    text-align: center
+
+    .settings-expert &,
+    .settings-general &
+      padding-left: $form-left-margin
+      text-align: left
+  .input-group span.error
+    padding-left: $label-width
+    padding-top: 5px
+    margin-left: $form-left-margin - $label-width
+
+  .form-wrapper
+    margin-bottom: 90px
+
+  .input-group
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    align-items: center
+    margin-bottom: 15px
+    select
+      border: 1px solid $login-border
+      border-radius: 3px
+      height: 32px
+      line-height: 32px
+      outline: none
+      margin-right: 10px
+
+    label
+      font-size: 14.5px
+      width: $label-width
+      text-align: right
+      color: $form-input-border
+      margin-right: $form-left-margin - $label-width
+
+    input,
+    textarea
+      flex-grow: 1
+      max-width: 400px
+      line-height: 35px
+      height: 35px
+      border-radius: 3px
+      border: 1px solid $form-input-border
+      background: $grey-bg
+      outline: none
+      padding-left: 10px
+
+    textarea
+      resize: none
+      min-height: 100px
+      line-height: 1.7
+
+  .input-group-checkbox
+    justify-content: flex-start
+
+    label:not(:first-of-type)
+      width: auto
+      text-align: left
+
+  .input-group-checkbox:last-of-type
+    margin-bottom: 20px
+
+  input[type="checkbox"]
+    width: 14px
+    height: 14px
+    border-radius: 2px
+    flex-grow: 0
+    margin-right: 15px
+
+  input[type="submit"]
+    margin-left: $form-left-margin
+    margin-top: 15px
+
+  input[type="submit"]:hover
+    cursor: pointer
+
+.settings-billing .input-group
+  justify-content: flex-start
+
+  label
+    width: $label-width - 50px
+
+//   .input-group-col
+//     max-width: 120px
+
+    // input
+      // flex-grow: 0
+//       width: 100%
+
+.settings-billing
+  .input-group-two
+    // justify-content: flex-end
+
+  .input-group-col
+    input
+      flex-grow: 0
+      width: 50%
+
+  .input-group-col:first-of-type
+    padding-left: 65px
+
+  .input-group-col:last-of-type
+    padding-left: 120px
+
+
+
+.add-media
+  margin-top: 15px
+  display: flex
+  justify-content: center
+  align-items: center
+  font-size: 42px
+  font-weight: 300
+  margin-left: $form-left-margin
+  width: 70px
+  height: 70px
+  color: $black-text
+  border-radius: 50%
+  background: $upload-photo
+
+
+.settings-general
+  &-right
+    flex-grow: 1
+  .settings-general-left
+    width: 225px
+
+
+.settings-general-flex
+  max-width: 740px
+  width: 100%
+  margin: 0 auto
+  display: flex
+  justify-content: space-between
+
+  .settings-billing &
+    max-width: 600px
+    justify-content: center
+    flex-direction: column
+
+  .settings-expert &
+    max-width: 600px
+
+  .settings-notifications &
+    justify-content: center
+    align-items: center
+    flex-direction: column
+
+    .notification-caption
+      text-align: right
+      margin-right: 60px
+      font-weight: 300
+      font-size: 16px
+
+    .notification-toggle
+      padding-left: 45px
+
+      label
+        display: inline-block
+
+    .notification-target
+      text-align: center
+      margin-top: 15px
+      font-weight: 300
+
+.settings-notification
+  max-width: 350px
+  width: 100%
+  margin-bottom: 90px
+
+.upload-photo
+  display: flex
+  align-items: center
+  justify-content: center
+  position: relative
+  overflow: hidden
+  width: 145px
+  height: 145px
+  margin: 0 auto 15px auto
+  border-radius: 50%
+  background: #d8d8d8
+  color: #292929
+  input[type='file']
+    cursor: pointer
+    width: 100%
+    height: 100%
+    opacity: 0
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    padding: 0
+  img
+    max-width: none
+    width: auto
+    height: 100%
+    &:hover
+      cursor: pointer
+
+  &-caption
+    width: 100%
+    margin: 0 auto
+    text-align: center
+    font-size: 14.5px
+    overflow: hidden
+    padding: 5px
+    text-overflow: ellipsis
+
+.billing-systems
+  max-width: 300px
+  width: 100%
+  margin: 0 auto
+  display: flex
+  justify-content: space-between
+  margin-bottom: 30px
+  .settings-header
+    color: $billing-system-unactive
+    &:hover
+      cursor: pointer
+    &.active
+      color: $black-text
+
+
+.paypal
+  text-align: center
+
+  &-not-found
+    color: #575858
+    margin-bottom: 15px

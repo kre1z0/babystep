@@ -1,0 +1,329 @@
+@import "vars"
+@import "libs"
+@import "normalize"
+@import "font-awesome"
+@import "base"
+@import "availability/base"
+@import "header"
+@import "incoming"
+@import "btn"
+@import "footer"
+@import "billing"
+@import "reports"
+@import "login"
+
+//Custom styles here
+.categories
+  display: flex
+  justify-content: space-between
+  padding-top: 40px
+  padding-bottom: 40px
+
+.grey-bg
+  background: $grey-bg
+  flex: 1
+
+.filter
+  background: #fff
+  border-top: 1px solid $filter-top-border
+  border-bottom: 1px solid $filter-bottom-border
+
+.filter-flex
+  display: flex
+  height: 78px
+  justify-content: space-between
+  align-items: center
+
+  .filter-settings &
+    justify-content: center
+
+
+.filter-categories
+  li
+    display: inline-block
+    margin-right: 35px
+    border: 4px solid transparent
+
+    a
+      font-size: 14px
+      padding-top: 22px
+      padding-bottom: 21px
+      position: relative
+      color: $grey-text
+      text-transform: uppercase
+      transition: all .3s ease
+
+    a:after
+      content: ''
+      position: absolute
+      bottom: -9px
+      width: 100%
+      left: 0
+      height: 4px
+      background: transparent
+      transition: all .3s ease
+
+  .filter-settings &
+    li
+      margin-right: 23px
+
+  li
+    a.active
+      color: #292922
+
+  li:last-of-type
+    margin-right: 0
+
+  li a.active:after
+    background: $blue-light
+
+  li:hover a
+    color: $black-text
+
+  li:hover a:after
+    background: $blue-light
+
+.filter-sort
+  display: flex
+  justify-content: flex-end
+  select
+    display: inline-block
+    vertical-align: middle
+    border: 1px solid $input-border
+    line-height: 35px
+    height: 35px
+    width: 150px
+    font-size: 14px
+    padding-left: 15px
+    padding-right: 15px
+    color: $grey-text
+    text-align: center
+    outline: none
+    margin-right: 10px
+    border-radius: 3px
+
+    &:hover
+      cursor: pointer
+
+.filter-view
+  border: 1px solid $input-border
+  border-radius: 3px
+  width: 78px
+
+  span
+    display: inline-block
+    vertical-align: middle
+    margin-right: -4px
+    width: 38px
+    height: 33px
+    line-height: 33px
+    text-align: center
+    background: #f6f6f6
+    color: $grey-text
+
+    &:hover
+      cursor: pointer
+
+  span.active
+    background: #fff
+
+.products
+  padding-top: 25px
+  padding-bottom: 25px
+
+.product
+  display: flex
+  justify-content: space-between
+  padding: 29px
+  margin-bottom: 15px
+  background: #fff
+  border-radius: 3px
+  border: 1px solid $product-border
+
+  &-img
+    width: 80px
+    flex-grow: 0
+    img
+      border-radius: 50%
+
+  &-desc
+    flex-grow: 2
+    max-width: 585px
+    width: 100%
+    margin-left: 30px
+    margin-right: 35px
+
+    &-header
+      font-size: 15px
+      color: $product-header
+      margin-bottom: 3px
+
+    &-meta
+      font-size: 15px
+      margin-bottom: 11px
+      color: $grey-text
+
+      span
+        font-weight: 600
+
+    p
+      color: $product-desc
+
+    p:last-of-type
+      margin-bottom: 0
+
+  &-right
+    flex-grow: 0
+    width: 170px
+    text-align: center
+
+    .btn
+      width: 100%
+      line-height: 40px
+      height: 40px
+      text-align: center
+      border-radius: 3px
+
+  &-price
+    font-size: 26px
+
+  &-subprice
+    color: $grey-text
+    margin-bottom: 15px
+    font-size: 13px
+
+.become-expert
+  padding-top: 60px
+  padding-bottom: 50px
+
+  h2
+    font-weight: 300
+
+.become-expert-flex
+  display: flex
+  justify-content: space-between
+  align-items: flex-end
+
+.become-expert-left
+  max-width: 550px
+  width: 100%
+
+  .btn
+    max-width: 250px
+    width: 100%
+    line-height: 50px
+    height: 50px
+    font-weight: 600
+    font-size: 18px
+
+// Dashboard
+.welcome
+  padding-top: 20px
+  padding-bottom: 30px
+  background: #fff
+  &-flex
+    display: flex
+    justify-content: space-between
+    align-items: flex-end
+
+
+  &-left
+    color: $black-text
+
+  &-text
+    margin-bottom: 0
+
+.income
+  &-result
+    font-weight: 300
+    font-size: 32px
+
+.calls
+  padding-top: 25px
+  padding-bottom: 25px
+
+.call
+  display: flex
+  justify-content: space-between
+  padding: 29px
+  margin-bottom: 15px
+  background: #fff
+  border-radius: 3px
+  border: 1px solid $product-border
+
+  p
+    color: $product-desc
+
+  &-type-img
+    width: 75px
+    height: 75px
+    border-radius: 50%
+    margin-bottom: 10px
+
+    &.video-call
+      background: $blue-light
+
+    &.audio-call
+      background: $yellow-light
+
+  &-type-caption
+    text-align: center
+    color: $grey-text
+    font-weight: 300
+
+  &-info
+    padding-left: 55px
+    padding-right: 35px
+    flex-grow: 1
+
+    &-header
+      font-size: 20px
+      font-weight: 600
+      color: $black-text
+
+    &-subheader
+      color: $grey-text
+
+    &-row
+      display: flex
+      justify-content: space-between
+      align-items: flex-start
+
+    &-row:first-of-type
+      margin-bottom: 25px
+
+  &-btns
+    width: 170px
+
+    & > &-row
+      display: flex
+      justify-content: space-between
+
+      .btn
+        width: 47%
+
+      .btn.btn-white:only-child
+        flex-grow: 1
+
+      .btn.btn-white:first-of-type
+        margin-right: 5px
+
+      .btn.btn-white:last-of-type
+        margin-left: 5px
+        flex-grow: 0
+
+      .btn.btn-white:only-child
+        margin-right: 0
+        margin-left: 0
+
+    .btn:only-child
+      width: 100%
+
+    &-row:first-of-type
+      margin-bottom: 15px
+
+@import "react-loading"
+@import "settings"
+@import "form"
+@import "reviews"
+@import "media"

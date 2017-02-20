@@ -1,0 +1,90 @@
+.reviews-stats
+  display: flex
+  justify-content: space-between
+
+  & > div
+    padding-left: 50px
+
+.reviews-stat
+  text-align: center
+
+  &-header
+    font-weight: 300
+    font-size: 32px
+    margin-bottom: -5px
+
+  &-subheader
+    color: $grey-text
+    font-size: 12px
+
+.reviews
+  padding-top: 25px
+  padding-bottom: 25px
+
+.review
+  display: flex
+  justify-content: space-between
+  align-items: center
+  padding: 29px
+  margin-bottom: 15px
+  background: #fff
+  border-radius: 3px
+  border: 1px solid $product-border
+
+  &-author
+    margin-right: 30px
+    img
+      border-radius: 50%
+
+  &-desc
+    flex-grow: 2
+    max-width: 440px
+    width: 100%
+
+    &-meta
+      font-size: 15px
+      margin-bottom: 11px
+      color: $grey-text
+
+      span
+        font-weight: 600
+
+    p
+      color: $product-desc
+      font-size: 15px
+
+  &-score
+    text-align: center
+    flex-grow: 1
+
+    &-header
+      font-size: 48px
+      font-weight: 300
+      margin-bottom: -5px
+
+    &-subheader
+      font-size: 12px
+      color: $grey-text
+
+  &-rating
+    // display: flex
+    // justify-content: space-between
+    // flex-direction: column
+    max-width: 175px
+    flex-grow: 1
+    width: 100%
+
+    &-item
+      display: flex
+      justify-content: space-between
+      margin-top: 20px
+      margin-bottom: 20px
+      font-size: 13px
+      color: $product-desc
+
+      &-rate
+        font-size: 11px
+        color: $star
+
+.review-report
+  color: $report-link
